@@ -1,0 +1,6 @@
+/ {
+	aliases {
+		app-led = &green_led;	   //by node label
+		app-led = "/leds/led_1";   //by path
+	};
+};
