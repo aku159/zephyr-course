@@ -1,0 +1,6 @@
+board:
+  name: cust_board
+  full_name: CUSTOM BOARD
+  vendor: myself
+  socs:
+  - name: mcxn236
