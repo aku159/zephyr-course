@@ -1,0 +1,6 @@
+board:
+  name: my_board
+  full_name: MY CUSTOM BOARD
+  vendor: iomico
+  socs:
+  - name: mcxn236
