@@ -1,6 +1,9 @@
 /dts-v1/;
 
 #include <nxp/nxp_mcxn23x.dtsi>
+#include <nxp/mcx/MCXN236VDF-pinctrl.h>
+#include "my_board-pinctrl.dtsi"
+#include "my_board.dtsi"
 
 / {
 	model = "My board";
@@ -17,6 +20,9 @@
 		zephyr,flash = &flash;
 		zephyr,flash-controller = &fmu;
 		zephyr,code-partition = &slot0_partition;
+		// zephyr,uart-mcumgr = &flexcomm4_lpuart4;
+		zephyr,console = &flexcomm4_lpuart4;
+		zephyr,shell-uart = &flexcomm4_lpuart4;
 	};
 
 	leds {
@@ -78,6 +84,21 @@
 		};
 	};
 };
+
+&flexcomm4 {
+	status = "okay";
+};
+
+&flexcomm4_lpuart4 {
+	status = "okay";
+};
+
+// &flexcomm4_lpuart4 {
+// 	current-speed = <115200>;
+// 	pinctrl-0 = <&pinmux_flexcomm4_lpuart>;
+// 	pinctrl-names = "default";
+// 	status = "okay";
+// };
 
 &os_timer {
 	status = "disabled";
